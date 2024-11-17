@@ -26,4 +26,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm main
+          git push https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm
