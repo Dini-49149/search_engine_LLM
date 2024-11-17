@@ -14,7 +14,13 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      - name: Pull from remote
+        run: |
+          git config --global user.email "diniprasad49149@gmail.com"
+          git config --global user.name "Dini-49149"
+          git pull --rebase origin main
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm main
+
