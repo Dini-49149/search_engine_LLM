@@ -22,8 +22,12 @@ jobs:
         run: |
           git remote set-url origin https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm
           git pull --rebase origin main
+      - name: Stage and Commit Changes
+        run: |
+          git add .
+          git commit -m "Syncing updates to Hugging Face Space" || echo "No changes to commit"
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm
+          git push https://dineshvenna:$HF_TOKEN@huggingface.co/spaces/dineshvenna/search_engine_llm main
